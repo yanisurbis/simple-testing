@@ -7,7 +7,11 @@ AddressBook.prototype.addContact = function(contact) {
   contacts[contacts.length] = contact
 }
 
-AddressBook.prototype.getContact = function(number) {
+AddressBook.prototype.getContact = function(index) {
   var contacts = this.contacts
-  return contacts[number]
+  return contacts[index]
+}
+
+AddressBook.prototype.deleteContact = function(index) {
+  this.contacts.splice(index, 1)
 }
