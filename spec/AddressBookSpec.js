@@ -1,4 +1,4 @@
-describe('AddressBook', function() {
+describe('Address Book', function() {
   var addressBook,
       thisContact
 
@@ -9,7 +9,7 @@ describe('AddressBook', function() {
 
   it('should be able to add a contact', function() {
     addressBook.addContact(thisContact)
-    
+
     expect(addressBook.getContact(0)).toBe(thisContact)
   })
 
@@ -18,5 +18,14 @@ describe('AddressBook', function() {
     addressBook.deleteContact(0)
 
     expect(addressBook.getContact(0)).not.toBeDefined()
+  })
+})
+
+describe('Async Address Book', function() {
+  it('should grab initial contacts', function() {
+    var addressBook = new AddressBook()
+
+    addressBook.getInitialContacts();
+    expect(addressBook.initialComplete).toBe(true)
   })
 })
